@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link href="https://fonts.googleapis.com/css?family=Rajdhani:300,500,700&amp;subset=" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="ctbl.css" />
+		<link rel="stylesheet" href="jquery/jquery-ui-1.11.4-smoothness.css" />
+		<script src="jquery/jquery-3.0.0.min.js"></script>
+		<script src="jquery/jquery-ui-1.11.4.min.js"></script>
+		<script src="jquery/plugins/jquery.validate.min.js"></script>
+		<link rel="stylesheet" href="ol/ol-4.4.2.css" type="text/css" />
+    <script src="ol/ol-4.4.2.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="ol/ol3-layerswitcher.css" type="text/css"/>
+		<script type="text/javascript" src="config.js?v=3.7.2"></script>
+		<script type="text/javascript" src="markers.js?v=3.7.2"></script>
+		<script type="text/javascript" src="dbloader.js?v=3.7.2"></script>
+		<script type="text/javascript" src="registrations.js?v=3.7.2"></script>
+		<script type="text/javascript" src="planeObject.js?v=3.7.2"></script>
+		<script type="text/javascript" src="formatter.js?v=2?v=3.7.2"></script>
+		<script type="text/javascript" src="flags.js?v=3.7.2"></script>
+		<script type="text/javascript" src="layers.js?v=3.7.2"></script>
+		<script type="text/javascript" src="script.js?v=3.7.2"></script>
+		<title>K7CSA SkyTracker</title>
+	</head>
+
+	<body onload="initialize()">
+		<div id="loader" class="hidden">
+			<img src="spinny.gif" id="spinny" alt="Loading...">
+			<progress id="loader_progress"></progress>
+		</div>
+
+		<form id="horrible_hack" class="hidden">
+		</form>
+
+
+		<div id="layout_container">
+
+
+			<div id="sidebar_container">
+					<div id="sidebar_canvas">
+
+
+					<div id="sidebar-table">
+
+								<div id="planes_table">
+									<table id="tableinfo" style="width: 100%">
+										<thead class="aircraft_table_header">
+											<tr>
+												<td id="flag" onclick="sortByCountry()"><!-- column for flag image --></td>
+												<td id="icao" onclick="sortByICAO();">ICAO</td>
+												<td id="flight" onclick="sortByFlight();">Ident</td>
+												<td id="registration" onclick="sortByRegistration();">Registration</td>
+												<td id="aircraft_type" onclick="sortByAircraftType();"> Aircraft type</td>
+												<td id="squawk" onclick="sortBySquawk();" style="text-align: right">Squawk</td>
+												<td id="altitude" onclick="sortByAltitude();" style="text-align: right">Altitude (<span class="altitudeUnit"></span>)</td>
+												<td id="speed" onclick="sortBySpeed();" style="text-align: right">Speed (<span class="speedUnit"></span>)</td>
+												<td id="vert_rate" onclick="sortByVerticalRate();" style="text-align: right">Vertical Rate (<span class="verticalRateUnit"></span>)</td>
+												<td id="distance" onclick="sortByDistance();" style="text-align: right">Distance (<span class="distanceUnit"></span>)</td>
+												<td id="track" onclick="sortByTrack();" style="text-align: right">Heading</td>
+												<td id="msgs" onclick="sortByMsgs();" style="text-align: right">Msgs</td>
+												<td id="seen" onclick="sortBySeen();" style="text-align: right">Age</td>
+												<td id="rssi" onclick="sortByRssi();" style="text-align: right">RSSI</td>
+												<td id="lat" onclick="sortByLatitude();" style="text-align: right">Latitude</td>
+												<td id="lon" onclick="sortByLongitude();" style="text-align: right">Longitude</td>
+												<td id="data_source" onclick="sortByDataSource();" style="text-align: right">Data Source</td>
+												<td id="airframes_mode_s_link">Airframes.org</td>
+												<td id="flightaware_mode_s_link">FlightAware</td>
+												<td id="flightaware_photo_link">Photos</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="plane_row_template" class="plane_table_row hidden" style="border-bottom: 3px solid red">
+												<td><img style="width: 20px; height=12px" src="about:blank" alt="Flag"></td>
+												<td class="icaoCodeColumn">ICAO</td>
+												<td>FLIGHT</td>
+												<td>REGISTRATION</td>
+												<td>AIRCRAFT_TYPE</td>
+												<td style="text-align: right">SQUAWK</td>
+												<td style="text-align: right">ALTITUDE</td>
+												<td style="text-align: right">SPEED</td>
+												<td style="text-align: right">VERT_RATE</td>
+												<td style="text-align: right">DISTANCE</td>
+												<td style="text-align: right">TRACK</td>
+												<td style="text-align: right">MSGS</td>
+												<td style="text-align: right">SEEN</td>
+												<td style="text-align: right">RSSI</td>
+												<td style="text-align: right">LAT</td>
+												<td style="text-align: right">LON</td>
+												<td style="text-align: right">DATA_SOURCE</td>
+												<td style="text-align: center">AIRFRAMES_MODE_S_LINK</td>
+												<td style="text-align: center">FLIGHTAWARE_MODE_S_LINK</td>
+												<td style="text-align: center">FLIGHTAWARE_PHOTO_LINK</td>
+											</tr>
+										</tbody>
+									</table>
+
+								</div> <!-- planes_table -->
+					</div>
+
+
+
+				</div> <!-- sidebar_canvas -->
+
+
+
+
+			</div> <!-- sidebar_container -->
+		</div> <!-- layout_container -->
+
+		<div id="SpecialSquawkWarning" class="hidden">
+			<b>Squawk 7x00 is reported and shown.</b><br>
+			This is most likely an error in receiving or decoding.<br>
+			Please do not call the local authorities, they already know about it if it is a valid squawk.
+		</div>
+
+		<div id="update_error" class="hidden">
+			<b>Problem fetching data from dump1090.</b><br>
+			<span id="update_error_detail"></span><br>
+			The displayed map data will be out of date.
+		</div>
+
+
+
+	</body>
+</html>

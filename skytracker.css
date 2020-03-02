@@ -1,0 +1,5 @@
+html, body {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+    margin: 0; padding: 0; background-color: #000000; font-family: "Rajdhani", "Archivo", sans-serif;
+    font-size: 12pt;
+}
