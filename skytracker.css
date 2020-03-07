@@ -120,6 +120,13 @@ img {
   margin-bottom: 1.25rem;
   font-weight: 400;
 }
+
+.card_header {
+	font-family: "Rajdhani", "Archivo", sans-serif;
+	font-size: 16px;
+	text-align: middle;
+}
+
 .made_by{
   font-weight: 400;
   font-size: 13px;
