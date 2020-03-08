@@ -91,13 +91,13 @@ img {
 /* iPad Screen landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
   .cards_item {
-    width: 16.66%;
+    width: 25%%;
   }
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
   .cards_item {
-    width: 25%;
+    width: 50%;
   }
 }
 
@@ -120,7 +120,7 @@ img {
 }
 
 .card_content {
-  padding: 1rem;
+  /*padding: 1rem; */
   /*background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);*/
 }
 
@@ -160,7 +160,7 @@ img {
 .aircraft_table td {
   border-bottom: 1px solid #78909C;
 	color: #ffffff;
-	padding: 1rem;
+	/*padding: 1rem; */
 }
 
 .tParam td {
