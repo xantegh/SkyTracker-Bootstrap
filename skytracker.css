@@ -89,7 +89,7 @@ img {
 /* iPhone Screen in Portrait and Landscape*/
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
   .cards_item {
-    width: 100px;
+    width: 50%;
   }
 }
 
