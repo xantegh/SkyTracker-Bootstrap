@@ -159,6 +159,8 @@ img {
 
 .aircraft_table td {
   border-bottom: 1px solid #78909C;
+	color: #ffffff;
+	padding: 1rem;
 }
 
 .tParam td {
