@@ -72,13 +72,13 @@ img {
 
 .cards_item {
   display: flex;
-  padding: 1rem;
+  padding: 0.3rem;
 }
 
 
 @media only screen and (min-width: 1281px) {
 	.cards_item {
-    width: 200px;
+    width: 10%;
   }
 }
 
