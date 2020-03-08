@@ -79,7 +79,7 @@ img {
 }
 
 
-@media only screen and (min-width: 1280) {
+@media only screen and (min-width: 1281px) {
 	.cards_item {
     width: 16.66%;
   }
