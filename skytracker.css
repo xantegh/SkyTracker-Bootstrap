@@ -1,3 +1,6 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,500,700');
+
 html, body {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
     margin: 0; padding: 0; background-color: #000000; font-family: "Rajdhani", "Archivo", sans-serif;
@@ -8,9 +11,6 @@ html, body {
   fonr-size: 16pt;
 }
 
-/* Font */
-@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,500,700');
-/*@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700'); */
 
 /* Design */
 *,
@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  font-family: 'Quicksand', serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
