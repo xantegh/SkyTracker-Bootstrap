@@ -82,7 +82,7 @@ img {
 /* iPad Screen */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
   .cards_item {
-    width: 150px;
+    width: 16.66%;
   }
 }
 
