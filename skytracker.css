@@ -78,13 +78,13 @@ img {
   padding: 1rem;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 1024px) {
   .cards_item {
-    width: 200px;
+    width: 150px;
   }
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 1920px) {
   .cards_item {
     width: 200px;
   }
