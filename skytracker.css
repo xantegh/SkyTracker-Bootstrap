@@ -97,7 +97,7 @@ img {
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
   .cards_item {
-    width: 50%;
+    width: 33.33%;
   }
 }
 
@@ -156,6 +156,10 @@ img {
   text-align: center;
 }
 
+.aircraft_table {
+	width: 100%;
+}
+
 
 .aircraft_table td {
   border-bottom: 1px solid #78909C;
@@ -163,10 +167,10 @@ img {
 	/*padding: 1rem; */
 }
 
-.tParam td {
+.tParam {
 	text-align: left;
 }
 
-.tValue td {
+.tValue{
 	text-align: right;
 }
