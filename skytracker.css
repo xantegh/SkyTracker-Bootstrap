@@ -169,10 +169,10 @@ img {
 
 .tParam {
 	text-align: left;
-	margin-left: ($spacer * .5) !important;
+	margin-left: ($spacer * 1) !important;
 }
 
 .tValue{
 	text-align: right;
-	margin-right: ($spacer * .5) !important;
+	margin-right: ($spacer * 1) !important;
 }
