@@ -9,7 +9,8 @@ html, body {
 }
 
 /* Font */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,500,700');
+/*@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700'); */
 
 /* Design */
 *,
@@ -124,7 +125,7 @@ img {
 .card_header {
 	font-family: "Rajdhani", "Archivo", sans-serif;
 	font-size: 2rem;
-	text-align: middle;
+	text-align: center;
 }
 
 .made_by{
